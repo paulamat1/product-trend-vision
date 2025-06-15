@@ -34,19 +34,26 @@ const mockSuggestions: AISuggestion[] = [
     description: 'Low stock detected for popular items - consider restocking',
     priority: 'high',
   },
+  {
+    id: 4,
+    type: 'optimization',
+    title: 'Price Optimization',
+    description: 'Adjust pricing for premium tickets based on demand patterns',
+    priority: 'medium',
+  },
 ];
 
 export const AISuggestionsCard = () => {
   const getIcon = (type: string) => {
     switch (type) {
       case 'optimization':
-        return <TrendingUp className="h-4 w-4" />;
+        return <TrendingUp className="h-3 w-3" />;
       case 'opportunity':
-        return <Lightbulb className="h-4 w-4" />;
+        return <Lightbulb className="h-3 w-3" />;
       case 'warning':
-        return <AlertTriangle className="h-4 w-4" />;
+        return <AlertTriangle className="h-3 w-3" />;
       default:
-        return <Bot className="h-4 w-4" />;
+        return <Bot className="h-3 w-3" />;
     }
   };
 
@@ -65,26 +72,26 @@ export const AISuggestionsCard = () => {
 
   return (
     <Card className="h-96">
-      <CardHeader>
+      <CardHeader className="pb-3">
         <CardTitle className="text-lg font-semibold flex items-center gap-2">
-          <Bot className="h-5 w-5 text-blue-600" />
+          <Bot className="h-4 w-4 text-blue-600" />
           AI Suggestions
         </CardTitle>
       </CardHeader>
-      <CardContent>
-        <div className="space-y-4">
+      <CardContent className="pt-0">
+        <div className="space-y-2">
           {mockSuggestions.map((suggestion) => (
-            <div key={suggestion.id} className="p-4 border border-gray-200 rounded-lg hover:bg-gray-50 transition-colors">
-              <div className="flex items-start justify-between mb-2">
-                <div className="flex items-center gap-2">
+            <div key={suggestion.id} className="p-2 border border-gray-200 rounded-lg hover:bg-gray-50 transition-colors">
+              <div className="flex items-start justify-between mb-1">
+                <div className="flex items-center gap-1.5">
                   {getIcon(suggestion.type)}
-                  <h4 className="font-medium text-gray-900">{suggestion.title}</h4>
+                  <h4 className="font-medium text-gray-900 text-sm">{suggestion.title}</h4>
                 </div>
-                <Badge className={getPriorityColor(suggestion.priority)}>
+                <Badge className={`${getPriorityColor(suggestion.priority)} text-xs px-1.5 py-0.5`}>
                   {suggestion.priority}
                 </Badge>
               </div>
-              <p className="text-sm text-gray-600">{suggestion.description}</p>
+              <p className="text-xs text-gray-600 leading-relaxed">{suggestion.description}</p>
             </div>
           ))}
         </div>

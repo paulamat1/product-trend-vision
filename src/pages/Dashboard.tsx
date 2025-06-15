@@ -47,7 +47,7 @@ const Dashboard = () => {
   ];
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-4">
       <div className="flex items-center justify-between">
         <h1 className="text-3xl font-bold text-gray-900">Dashboard</h1>
         <div className="text-sm text-gray-500">
@@ -56,7 +56,7 @@ const Dashboard = () => {
       </div>
 
       {/* KPI Cards */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
         {kpiData.map((kpi, index) => (
           <KPICard
             key={index}
@@ -70,7 +70,7 @@ const Dashboard = () => {
       </div>
 
       {/* Main Dashboard Grid */}
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
         {/* Top Selling Events */}
         <TopSellingCard title="Top Selling Events" items={topEvents} />
         
@@ -85,7 +85,7 @@ const Dashboard = () => {
       </div>
 
       {/* Sales Chart and AI Suggestions */}
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
         <SalesChart />
         <AISuggestionsCard />
       </div>
