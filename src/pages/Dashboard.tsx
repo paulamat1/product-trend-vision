@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { KPICard } from '@/components/dashboard/KPICard';
 import { TopSellingCard } from '@/components/dashboard/TopSellingCard';
@@ -49,14 +48,14 @@ const Dashboard = () => {
   return (
     <div className="space-y-4">
       <div className="flex items-center justify-between">
-        <h1 className="text-3xl font-bold text-gray-900">Dashboard</h1>
-        <div className="text-sm text-gray-500">
+        <h1 className="text-2xl md:text-3xl font-bold text-gray-900">Dashboard</h1>
+        <div className="text-xs md:text-sm text-gray-500">
           Last updated: {new Date().toLocaleDateString()}
         </div>
       </div>
 
-      {/* KPI Cards */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+      {/* KPI Cards - 2x2 on mobile, 4 across on larger screens */}
+      <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 md:gap-4">
         {kpiData.map((kpi, index) => (
           <KPICard
             key={index}

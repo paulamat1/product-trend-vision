@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { SidebarProvider } from '@/components/ui/sidebar';
+import { SidebarProvider, SidebarTrigger } from '@/components/ui/sidebar';
 import { DashboardSidebar } from './DashboardSidebar';
 
 interface DashboardLayoutProps {
@@ -12,7 +12,10 @@ export const DashboardLayout = ({ children }: DashboardLayoutProps) => {
     <SidebarProvider>
       <div className="min-h-screen flex w-full bg-gray-50">
         <DashboardSidebar />
-        <main className="flex-1 p-6">
+        <main className="flex-1 p-4 md:p-6">
+          <div className="md:hidden mb-4">
+            <SidebarTrigger />
+          </div>
           {children}
         </main>
       </div>
