@@ -63,7 +63,7 @@ const Dashboard = () => {
             value={kpi.value}
             change={kpi.change}
             changeType={kpi.changeType}
-            description="from last month"
+            description="from last week"
           />
         ))}
       </div>
